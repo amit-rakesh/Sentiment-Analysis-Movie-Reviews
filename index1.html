@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html style='display: table; margin: auto'>
+        <head>
+                <title>Sentiment Analysis on Movie Reviews</title>
+                <script type="text/javascript">
+                    var allMovieReviews = "";
+		    function SaveReview()
+                    {
+                        var review = document.getElementById("txtMovieReview");
+                        var txtSavedReview = document.getElementById("txtSavedReview");
+                        var iSavedReview = document.getElementById("iSavedReview");
+                        allMovieReviews += review.value + "<br/><hr/>";
+                        txtSavedReview.innerHTML = allMovieReviews;
+                        iSavedReview.value = allMovieReviews;
+                        //window.alert("hello: " + review.value);
+                        //window.alert("hello: " + iSavedReview.value);
+                    }
+                </script>
+        </head>
+        <body style='display: table-cell; vertical-align: middle; width: 700px; background-color: #e3e2dd'>
+                <h2 style='text-align: left'>Sentiment Analysis on Movie Reviews</h2>
+                <form value="" action="start1.py/get_info" method="POST">
+                        <table style='margin: 0px auto;'>
+                                <tr>
+                                        <td style="width: 350px; line-height: 30px;"><b>Movie Review</b></td>
+                                        <!--<td><input type="text" name="txtMovieReview" title="Please write a movie review for sentimental review"/></td>-->
+                                        <td><textarea id="txtMovieReview" name="txtMovieReview" cols="65" rows="5" style="line-height: 18px; padding: 8px; border: 2px solid #765942; border-radius: 10px;"></textarea></td>
+                                </tr>
+                                <tr>
+                                        <td><br/></td>
+                                        <td></td>
+                                </tr>
+                        </table>
+                        <left>
+                            <input type="button" value="Save Review" title="Save movie reviews" style="padding: 8px 14px; font-weight: bold; font-size: 15px; text-decoration: none; border: 1px solid #333; cursor: pointer; background: Green; color: #fff !important; text-align: center" onclick="SaveReview()">
+                            &nbsp;&nbsp;
+                            <input type="submit" value="Process Sentimental Analysis" title="Process Sentimental Analysis on movie reviews" style="padding: 8px 14px; font-weight: bold; font-size: 15px; text-decoration: none; border: 1px solid #333; cursor: pointer; background: #08f; color: #fff !important; text-align: center">
+                        </left>
+                        <br/><br/>
+                        <h3 style="color: green">Saved Movie Reviews</h3>
+                        <p id="txtSavedReview" name="txtSavedReview" style="line-height: 30px">
+                        </p>
+                        <input type="text" id="iSavedReview" name="iSavedReview" style="line-height: 30px; width: 100%" hidden><br/>
+                </form>
+        </body>
+</html>
+
